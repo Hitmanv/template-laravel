@@ -12,8 +12,11 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
+        "hitmanv/laverify": "^1.0",
         "laravel/framework": "^7.24",
-        "laravel/tinker": "^2.0"
+        "laravel/sanctum": "^2.6",
+        "laravel/tinker": "^2.0",
+        "phpgangsta/googleauthenticator": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

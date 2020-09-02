@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -53,6 +55,10 @@ class Handler extends ExceptionHandler
     {
         if($exception instanceof ValidationException) {
             throw new \App\Exceptions\ValidationException($exception);
+        }
+
+        if($exception instanceof AuthenticationException) {
+            throw new UnauthorizedException();
         }
         return parent::render($request, $exception);
     }
