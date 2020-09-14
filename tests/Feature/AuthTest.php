@@ -112,7 +112,6 @@ it("can't access user content without correct token", function(){
     $resp = $this->withHeaders(['Authorization' => 'Bearer abcd' ])->json('GET', '/api/auth/test');
     $data = $resp->getData(true);
 
-    $resp->dump();
     $this->assertNotEquals($data['code'], 0);
 });
 
